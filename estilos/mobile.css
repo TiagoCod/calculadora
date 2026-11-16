@@ -178,7 +178,7 @@ section#calculadora div#outros button#apagar:active{
     transform: scale(0.95);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
     section#calculadora {
          padding: 12px;
     }

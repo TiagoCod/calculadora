@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+
+:root{
+    --fundo: #09090F;
+    --calculadora: #181824;
+    --visor: #101019;
+    --botoes-numericos: #252535;
+    --operadores: #7657E8;
+    --igualdade: #9675FF;
+    --texto: #F8FAFC;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +19,13 @@
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 20px;
-    background-color: slategray;
+    min-height: 100vh;
+    background: linear-gradient(
+    135deg,
+    #09090F,
+    #17152B,
+    #242044);
+
 
     display: flex;
     flex-flow: row wrap;
@@ -22,18 +39,24 @@ button:hover{
     cursor: pointer;
 }
 section#calculadora{
-    background-color: white;
+    background-color: var(--calculadora);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 16px;
     width: 350px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5),
+            0 0 25px rgba(118, 87, 232, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.253);
 }
 section#calculadora div#visor{
-    background-color: rgb(230, 223, 223);
+    background-color: var(--visor);
     padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
     text-align: right;
-    font-size: 1.5em;
+    font-size: 1.8em;
+    color: var(--texto);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 section#calculadora button{
     padding: 25px;
@@ -66,10 +89,19 @@ section#calculadora div.numeros{
 }
 section#calculadora div.numeros button{
     font-size: 1.1em;
+    color: var(--texto);
+    background-color: var(--botoes-numericos);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    transition: 0.2s ease;
 }
 section#calculadora div.numeros button:hover{
-    background-color: rgb(221, 215, 215);
-    transform: translateY(2%);
+    background-color: #35354A;
+    transform: translateY(-2px);
+}
+section#calculadora div.numeros button:active{
+    transform: scale(0.95);
 }
 section#calculadora div#operacoes{
     display: grid;
@@ -77,10 +109,66 @@ section#calculadora div#operacoes{
     grid-area: 2 / 2;
 }
 section#calculadora div#operacoes button{
-     background-color: orangered;
-     font-size: 1.2em;
+    background-color: var(--operadores);
+    color: var(--texto);
+    font-size: 1.2em;
+    border: none;
+    border-radius: 12px;
+    transition: 0.2s ease;
 }
 section#calculadora div#operacoes button:hover{
-    background-color: rgb(211, 68, 16);
-    transform: translateY(2%);
+    background-color: #8B72ED;
+    transform: translateY(-2px);
+}
+section#calculadora div#operacoes button:active{
+    transform: scale(0.95);
+}
+
+section#calculadora button#igual{
+    background-color: var(--igualdade);
+    color: var(--texto);
+    border: none;
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+section#calculadora div#outros button#igual:hover{
+    background-color: #A78BFA;
+    transform: translateY(-2px);
+}
+
+section#calculadora div#outros button#igual:active{
+    transform: scale(0.95);
+}
+section#calculadora div#outros button#deletar{
+    background-color: #7F1D35;
+    color: var(--texto);
+    border: none;
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+section#calculadora div#outros button#deletar:hover{
+    background-color: #A52A48;
+    transform: translateY(-2px);
+}
+
+section#calculadora div#outros button#deletar:active{
+    transform: scale(0.95);
+}
+section#calculadora div#outros button#apagar{
+    background-color: #343444;
+    color: var(--texto);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+section#calculadora div#outros button#apagar:hover{
+    background-color: #49495C;
+    transform: translateY(-2px);
+}
+
+section#calculadora div#outros button#apagar:active{
+    transform: scale(0.95);
 }

@@ -86,11 +86,15 @@ section#calculadora div#outros button:hover{
 }
 section#calculadora div.teclado{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
 }
 section#calculadora div.numeros{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-column: 1 / 4;
+    grid-row: 2;
+    gap: 7px;
 }
 section#calculadora div.numeros button{
     font-size: 1.1em;
@@ -110,8 +114,10 @@ section#calculadora div.numeros button:active{
 }
 section#calculadora div#operacoes{
     display: grid;
-    grid-template-columns: 0.3fr;
-    grid-area: 2 / 2;
+    grid-template-columns: 1fr;
+    grid-column: 4;
+    grid-row: 2;
+    gap: 7px;
 }
 section#calculadora div#operacoes button{
     background-color: var(--operadores);
@@ -120,6 +126,10 @@ section#calculadora div#operacoes button{
     border: none;
     border-radius: 12px;
     transition: 0.2s ease;
+
+    margin: 0;
+    width: 100%;
+    padding: 20px 8px;
 }
 section#calculadora div#operacoes button:hover{
     background-color: #8B72ED;
@@ -129,7 +139,7 @@ section#calculadora div#operacoes button:active{
     transform: scale(0.95);
 }
 
-section#calculadora button#igual{
+section#calculadora  div#outros button#igual{
     background-color: var(--igualdade);
     color: var(--texto);
     border: none;
@@ -178,6 +188,10 @@ section#calculadora div#outros button#apagar:active{
     transform: scale(0.95);
 }
 
+/*                     Media Queries                         */
+
+
+
 @media screen and (max-width: 400px) {
     section#calculadora {
          padding: 12px;
@@ -202,6 +216,6 @@ section#calculadora div#outros button#apagar:active{
 
     section#calculadora div#operacoes button{
         margin: 0;
-        padding: 20px 14px;
+        padding: 16px 8px;
 }
 }

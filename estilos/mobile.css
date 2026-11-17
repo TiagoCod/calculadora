@@ -186,4 +186,22 @@ section#calculadora div#outros button#apagar:active{
         padding: 18px;
         margin: 4px;
     }
+
+    section#calculadora div.numeros{
+        gap: 6px;
+}
+
+    section#calculadora div.numeros button{
+        margin: 0;
+        padding: 20px 16px;
+}
+    section#calculadora div#operacoes{
+        grid-template-columns: 1fr;
+        gap: 6px;
+}
+
+    section#calculadora div#operacoes button{
+        margin: 0;
+        padding: 20px 14px;
+}
 }
